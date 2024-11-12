@@ -34,7 +34,7 @@ const proceedPay = () => {
                     data.append('action', 'sc_proceed_pay');
                     data.append('payment_method', payment_method)
 
-                    fetch('/wp-admin/admin-ajax.php', {
+                    fetch(sc.ajaxurl, {
                             method: 'POST',
                             body: data,
                         })
@@ -113,7 +113,7 @@ const applyCoupon = () => {
             data.append('action', 'sc_apply_coupon');
             data.append('coupon', couponValue)
 
-            fetch('/wp-admin/admin-ajax.php', {
+            fetch(sc.ajaxurl, {
                     method: 'POST',
                     body: data,
                 })
@@ -141,7 +141,7 @@ const removeCoupon = () => {
             let data = new FormData();
             data.append('action', 'sc_remove_coupon');
 
-            fetch('/wp-admin/admin-ajax.php', {
+            fetch(sc.ajaxurl, {
                     method: 'POST',
                     body: data,
                 })
